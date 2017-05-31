@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 package stop;
-import java.awt.*;
-import java.awt.event.ActionEvent;
+import java.awt.FlowLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.*;
+import javax.swing.GroupLayout.Alignment;
 
 /**
  *
@@ -21,16 +21,20 @@ public class Visual {
         frame.setSize(500, 500);
         frame.setTitle("¡STOP!");
         
+        
         //Panel de inicio
         JPanel inicio= new JPanel();
         inicio.setSize(500, 500);
         inicio.setVisible(true);
         
-        JPanel instrucciones= new JPanel();      
+        //Panel de instrucciones
+        JPanel instrucciones= new JPanel(); 
+        instrucciones.setLayout(new BoxLayout(instrucciones,BoxLayout.Y_AXIS));
+        
         ImageIcon icon= new ImageIcon("titulo.png");
-        JLabel im= new JLabel ("", icon, JLabel.CENTER);
+        JLabel im= new JLabel ("", icon, JLabel.CENTER);   
         inicio.add(im);
-
+        
         JLabel ins= new JLabel();
         ins.setText("INSTRUCCIONES");
         instrucciones.add(ins);
@@ -40,12 +44,28 @@ public class Visual {
         instrucciones.add(ins1);
         
         JLabel ins2= new JLabel();
-        ins2.setText("Para empezar la diversión deberas escoger: las categorias,");
+        ins2.setText("Para empezar la diversión deberas escoger: las categorias, el numero de jugadores y las rondas por esta partida, si quieres que");
         instrucciones.add(ins2);
         
+        JLabel ins6= new JLabel();
+        ins6.setText("(Nombre,Apellido,Ciudad, Fruta, Animal, Cosa, ...) y las columnas (rondas), " );
+        instrucciones.add(ins6);
+        
+        JLabel ins7= new JLabel();
+        ins7.setText("que deben ser llenadas por el jugador de acuerdo a la letra escogida" );
+        instrucciones.add(ins7);
+        
         JLabel ins3= new JLabel();
-        ins3.setText("el numero de jugadores y las rondas por esta partida, si quieres que" );
+        ins3.setText("el nivel de dificultad suba, entonces escoge el tiempo limite para la partida." );
         instrucciones.add(ins3);
+        
+        JLabel ins4= new JLabel();
+        ins4.setText("Posteriormente el juego escogera aleatoreamente la letra con la que empezará esta partida." );
+        instrucciones.add(ins4);
+        
+        JLabel ins5= new JLabel();
+        ins5.setText("La tabla que se genera está compesta por diversas columnas, cuyos encabezados corresponden a las categorias" );
+        instrucciones.add(ins5);
         
         JButton boton4 = new JButton();
         boton4.setLocation(50, 400);
