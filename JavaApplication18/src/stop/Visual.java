@@ -111,19 +111,13 @@ public class Visual {
         escogerLabel1.setText("Número de jugadores " );
         escoger.add(escogerLabel1); 
         
-        escoger.setLayout(new BoxLayout(escoger,BoxLayout.X_AXIS));
-        
         JLabel escogerLabel2= new JLabel();
         escogerLabel2.setText("                            Categorias " );
         escoger.add(escogerLabel2); 
-        
-        escoger.setLayout(new BoxLayout(escoger,BoxLayout.X_AXIS));
-        
+
         JLabel escogerLabel3= new JLabel();
         escogerLabel3.setText("                            Rondas " );
         escoger.add(escogerLabel3); 
-        
-        escoger.setLayout(new BoxLayout(escoger,BoxLayout.X_AXIS));
         
         JLabel escogerLabel4= new JLabel();
         escogerLabel4.setText("                            Temporizador " );
@@ -142,6 +136,7 @@ public class Visual {
         
         JRadioButton Box4= new JRadioButton("4");
         escoger.add(Box4);
+
         Box1.addMouseListener(new MouseListener(){
             
             @Override
@@ -260,6 +255,31 @@ public class Visual {
                 
             }
         });
+        
+        //escoger.setLayout(new BoxLayout(escoger,BoxLayout.X_AXIS));
+        JCheckBox check1= new JCheckBox("Nombre");
+        escoger.add(check1);
+        
+        JCheckBox check2= new JCheckBox("Apellido");
+        escoger.add(check2);
+        
+        JCheckBox check3= new JCheckBox("Cosa");
+        escoger.add(check3);
+        
+        JCheckBox check4= new JCheckBox();
+        escoger.add(check4);
+        
+        JCheckBox check5= new JCheckBox();
+        escoger.add(check5);
+        
+        JCheckBox check6= new JCheckBox();
+        escoger.add(check6);
+        
+        JCheckBox check7= new JCheckBox();
+        escoger.add(check7);
+        
+        JCheckBox check8= new JCheckBox();
+        escoger.add(check8);
         
         JButton boton4 = new JButton();
         boton4.setLocation(50, 400);
