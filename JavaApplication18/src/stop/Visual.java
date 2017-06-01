@@ -1,4 +1,5 @@
 package stop;
+import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.*;
@@ -108,34 +109,27 @@ public class Visual {
         escoger.setLayout(new BoxLayout(escoger,BoxLayout.X_AXIS));
         
         JLabel escogerLabel1= new JLabel();
-        escogerLabel1.setText("Número de jugadores " );
+        escogerLabel1.setText("Número de jugadores" );
         escoger.add(escogerLabel1); 
         
         JLabel escogerLabel2= new JLabel();
-        escogerLabel2.setText("                            Categorias " );
+        escogerLabel2.setText("Categorias " );
         escoger.add(escogerLabel2); 
 
         JLabel escogerLabel3= new JLabel();
-        escogerLabel3.setText("                            Rondas " );
+        escogerLabel3.setText("Rondas " );
         escoger.add(escogerLabel3); 
         
         JLabel escogerLabel4= new JLabel();
-        escogerLabel4.setText("                            Temporizador " );
+        escogerLabel4.setText(" Temporizador " );
         escoger.add(escogerLabel4); 
         
-        escoger.setLayout(new BoxLayout(escoger,BoxLayout.Y_AXIS));
+        escoger.setLayout(new GridLayout(5,4));
         
         JRadioButton Box1= new JRadioButton("1");
-        escoger.add(Box1);
-        
         JRadioButton Box2= new JRadioButton("2");
-        escoger.add(Box2);
-        
         JRadioButton Box3= new JRadioButton("3");
-        escoger.add(Box3);
-        
         JRadioButton Box4= new JRadioButton("4");
-        escoger.add(Box4);
 
         Box1.addMouseListener(new MouseListener(){
             
@@ -258,35 +252,30 @@ public class Visual {
         
         //escoger.setLayout(new BoxLayout(escoger,BoxLayout.X_AXIS));
         JCheckBox check1= new JCheckBox("Nombre");
-        escoger.add(check1);
-        
         JCheckBox check2= new JCheckBox("Apellido");
-        escoger.add(check2);
-        
         JCheckBox check3= new JCheckBox("Cosa");
-        escoger.add(check3);
-        
         JCheckBox check4= new JCheckBox("Color");
-        escoger.add(check4);
-        
         JCheckBox check5= new JCheckBox("Pais");
-        escoger.add(check5);
-        
-        JCheckBox check6= new JCheckBox("Animal");
-        escoger.add(check6);
-        
-        JCheckBox check7= new JCheckBox("Ciudad");
-        escoger.add(check7);
-        
+        JCheckBox check6= new JCheckBox("Animal"); 
+        JCheckBox check7= new JCheckBox("Ciudad");  
         JCheckBox check8= new JCheckBox("Deporte");
-        escoger.add(check8);
-        
         JCheckBox check9= new JCheckBox("Fruta");
-        escoger.add(check9);
-        
         JCheckBox check10= new JCheckBox("Verbo");
-        escoger.add(check10);
         
+        JComboBox rondas= new JComboBox(new String[]{"Seleccione el numero de rondas","1","2","3","4","5","6","7",
+            "8","9","10","11","12","13","14","15","16","17","18","19","20","21",
+            "22","23","24","25","26","27"});
+
+        escoger.add(Box1);
+        escoger.add(check1);
+        escoger.add(rondas);
+        
+        escoger.add(Box2);
+        escoger.add(check1);
+        escoger.add(Box3);
+        escoger.add(check1);
+        escoger.add(Box4);
+        escoger.add(check1);
         JButton boton4 = new JButton();
         boton4.setLocation(50, 400);
         boton4.setText("Jugar");
