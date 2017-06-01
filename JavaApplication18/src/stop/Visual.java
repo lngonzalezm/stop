@@ -266,20 +266,26 @@ public class Visual {
         JCheckBox check3= new JCheckBox("Cosa");
         escoger.add(check3);
         
-        JCheckBox check4= new JCheckBox();
+        JCheckBox check4= new JCheckBox("Color");
         escoger.add(check4);
         
-        JCheckBox check5= new JCheckBox();
+        JCheckBox check5= new JCheckBox("Pais");
         escoger.add(check5);
         
-        JCheckBox check6= new JCheckBox();
+        JCheckBox check6= new JCheckBox("Animal");
         escoger.add(check6);
         
-        JCheckBox check7= new JCheckBox();
+        JCheckBox check7= new JCheckBox("Ciudad");
         escoger.add(check7);
         
-        JCheckBox check8= new JCheckBox();
+        JCheckBox check8= new JCheckBox("Deporte");
         escoger.add(check8);
+        
+        JCheckBox check9= new JCheckBox("Fruta");
+        escoger.add(check9);
+        
+        JCheckBox check10= new JCheckBox("Verbo");
+        escoger.add(check10);
         
         JButton boton4 = new JButton();
         boton4.setLocation(50, 400);
