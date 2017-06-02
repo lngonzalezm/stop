@@ -52,8 +52,7 @@ public class Visual {
         escoger.setVisible(false);
         escoger.setAutoscrolls(false);
         frame.add(escoger);
-        
-        
+   
         //Panel de la ruleta donde se escogera aleatoreamene la letra
         Ruleta ruleta= new Ruleta();
         ruleta.setSize(954, 800);
@@ -68,42 +67,14 @@ public class Visual {
         frame.add(tablero);
         
         //Panel muestra tablero final y puntaje
-        JPanel tableroFinal=new JPanel();
+        TableroFinal tableroFinal=new TableroFinal();
         tableroFinal.setVisible(false);
         frame.add(tableroFinal);
         
         //Panel de fin del juego 
-        JPanel FinJuego=new JPanel();
-        FinJuego.setVisible(false);
-        frame.add(FinJuego);
-        
-        //Creacion de objetos para panel tablero final 
-        JLabel puntajeFinal= new JLabel("Puntaje Final");
-        JLabel puntaje1= new JLabel();
-        
-        JButton salir= new JButton("Salir");
-        
-        //Agregacion de objetos para panel tablero final
-        //tableroFinal.add(tabla);
-        tableroFinal.add(puntaje1);
-        
-        //Creacion de objetos para panel fin del juego  
-        JLabel puntaje= new JLabel("Puntaje del juego");
-        JLabel ganador= new JLabel("Gana jugador # ");
-        JLabel ganador1= new JLabel();
-        JLabel Salir= new JLabel("Fin del juego. ¿Desea jugar de nuevo?");
-        
-        JButton Si= new JButton("Si");
-        JButton No= new JButton("No");
-        
-        //Agregacion de objetos para panel fin del juego
-        FinJuego.add(puntaje);
-        FinJuego.add(puntaje1);
-        FinJuego.add(ganador);
-        FinJuego.add(ganador1);
-        FinJuego.add(Salir);
-        FinJuego.add(Si);
-        FinJuego.add(No);
+        FinJuego finJuego=new FinJuego();
+        finJuego.setVisible(false);
+        frame.add(finJuego);
        
         frame.setVisible(true);
     }
