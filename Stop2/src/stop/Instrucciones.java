@@ -10,7 +10,9 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -19,6 +21,15 @@ import javax.swing.JPanel;
  * @author USER
  */
 public class Instrucciones extends JPanel{
+    
+    private JFrame frame;
+    
+    public Instrucciones(Visual v) {
+        this.setSize(954, 800);
+        this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
+        this.frame= v;
+    }
+    
     
     @Override
     protected void paintComponent (Graphics g){
@@ -54,13 +65,14 @@ public class Instrucciones extends JPanel{
         ins9.setFont(font2);
         ins10.setFont(font2);
         ins11.setFont(font2);
-        
+        JPanel instrucciones= this;
         
         boton4.addMouseListener(new MouseListener(){
             
             @Override
             public void mouseClicked(MouseEvent e) {
-
+                ((Visual)frame).CambiarPanel("escoger","instrucciones");
+                instrucciones.setVisible(false);
             }
 
             @Override

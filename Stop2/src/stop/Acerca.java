@@ -9,7 +9,9 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -18,6 +20,14 @@ import javax.swing.JPanel;
  * @author USER
  */
 public class Acerca extends JPanel{
+    private JFrame frame;
+    
+    public Acerca(Visual v) {
+        this.setSize(954, 800);
+        this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
+        this.setVisible(false);
+        this.frame=v;
+    }
     
     @Override
     protected void paintComponent (Graphics g){
@@ -39,12 +49,14 @@ public class Acerca extends JPanel{
         acercalabel5.setFont(font2);
         acercalabel6.setFont(font2);
         boton5.setFont(font);
+        JPanel acerca= this;
         
         boton5.addMouseListener(new MouseListener(){
             
             @Override
             public void mouseClicked(MouseEvent e) {
-  
+                ((Visual)frame).CambiarPanel("acerca","inicio");
+                acerca.setVisible(false);
             }
 
             @Override

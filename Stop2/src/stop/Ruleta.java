@@ -13,8 +13,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import static java.lang.System.out;
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
@@ -28,12 +31,17 @@ public class Ruleta extends JPanel implements ActionListener, MouseListener{
     private Timer timer;
     private int secuencia;
     private JLabel letra;
+    private JFrame frame;
 
-    public Ruleta() {
+    public Ruleta(Visual v) {
         timer = new Timer(300, this);
         timer.start();
         this.secuencia = 0;
          this.letra = new JLabel(letras());
+         this.setSize(954, 800);
+        this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
+        this.setVisible(false);
+        this.frame=v;
     }
 
     @Override
@@ -43,27 +51,32 @@ public class Ruleta extends JPanel implements ActionListener, MouseListener{
         Font font= new Font("Forte", 0, 40);
         Font font2= new Font("Forte", 0, 80);
         JLabel r1= new JLabel("Empieza con la letra: ");
+        JLabel r2= new JLabel(" ");
+        JLabel r3= new JLabel(" ");
         Image icon= loadImage("ruleta.jpg");
         Image flecha= loadImage("flecha.png");
         JButton boton7=new JButton("Jugar");
         boton7.setBackground(Color.red);
-        g.drawImage(flecha, 475, 300,null);
-        g.drawImage(icon, 400, 0,700,300,(this.secuencia*120),(this.secuencia*120),(this.secuencia*120)+120,(this.secuencia*120)+120,this);
-        letra= new JLabel(letras());
-        
+        g.drawImage(flecha, 175, 350,null);
+        g.drawImage(icon, 100, 50,400,350,(this.secuencia*120),(this.secuencia*120),(this.secuencia*120)+120,(this.secuencia*120)+120,this);
+        letra= new JLabel("\t"+"\t"+"\t"+"\t"+"\t"+"           "+letras());
         r1.setFont(font);
+        r2.setFont(font);
         letra.setFont(font2);
         boton7.setFont(font);
         
         this.add(r1);
+        this.add(r2);
+        this.add(r3);
         this.add(letra);
         this.add(boton7);
-        
+        JPanel tablero=this;
         boton7.addMouseListener(new MouseListener(){
             
             @Override
             public void mouseClicked(MouseEvent e) {
-                
+                ((Visual)frame).CambiarPanel("tablero","ruleta");
+                tablero.setVisible(false);
             }
 
             @Override
@@ -153,6 +166,11 @@ public class Ruleta extends JPanel implements ActionListener, MouseListener{
             }
             
       return rul;
+    }
+    public String EnviarLetra() {
+        String l=this.letras();
+        String letras=l.toString();
+        return letras;
     }
 
     @Override

@@ -8,11 +8,13 @@ package stop;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
@@ -22,6 +24,15 @@ import javax.swing.JRadioButton;
  * @author USER
  */
 public class Escoger extends JPanel{
+    private JFrame frame;
+    
+    public Escoger(Visual v) {
+        this.setSize(954, 800);
+        this.setLayout(new GridLayout(11,4));
+        this.setVisible(false);
+        this.setAutoscrolls(false);
+        this.frame=v;
+    }
     
     @Override
     protected void paintComponent (Graphics g){
@@ -268,11 +279,15 @@ public class Escoger extends JPanel{
                 
             }
         });
+        
+        JPanel escoger= this;
+        
         boton6.addMouseListener(new MouseListener(){
             
             @Override
             public void mouseClicked(MouseEvent e) {
-                
+                ((Visual)frame).CambiarPanel("ruleta","escoger");
+                escoger.setVisible(false);
             }
 
             @Override
