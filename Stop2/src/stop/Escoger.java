@@ -25,6 +25,9 @@ import javax.swing.JRadioButton;
  */
 public class Escoger extends JPanel{
     private JFrame frame;
+    private String[] categorias;
+    private int filas;
+    private int columnas;
     
     public Escoger(Visual v) {
         this.setSize(954, 800);
@@ -32,6 +35,34 @@ public class Escoger extends JPanel{
         this.setVisible(false);
         this.setAutoscrolls(false);
         this.frame=v;
+        this.categorias = categorias;
+        this.filas = filas;
+        this.columnas = columnas;
+        
+    }
+
+    public String[] getCategorias() {
+        return categorias;
+    }
+
+    public void setCategorias(String[] categorias) {
+        this.categorias = categorias;
+    }
+
+    public int getFilas() {
+        return filas;
+    }
+
+    public void setFilas(int filas) {
+        this.filas = filas;
+    }
+
+    public int getColumnas() {
+        return columnas;
+    }
+
+    public void setColumnas(int columnas) {
+        this.columnas = columnas;
     }
     
     @Override
@@ -86,6 +117,206 @@ public class Escoger extends JPanel{
         JCheckBox check9= new JCheckBox("Fruta");
         JCheckBox check10= new JCheckBox("Verbo");
         JCheckBox check11= new JCheckBox("jugar con tiempo");
+        
+        if(check1.isSelected()){
+            categorias[0]= "Nombre";
+            if(check2.isSelected()){
+                categorias[1]= "Apellido";
+                if(check3.isSelected()){
+                    categorias[2]= "Cosa";
+                    if(check4.isSelected()){
+                        categorias[3]= "Color";
+                        if(check5.isSelected()){
+                            categorias[4]= "Pais";
+                            if(check6.isSelected()){
+                                categorias[5]= "Animal";
+                                if(check7.isSelected()){
+                                    categorias[6]= "Ciudad";
+                                    if(check8.isSelected()){
+                                        categorias[7]= "Deporte";
+                                        if(check9.isSelected()){
+                                            categorias[8]= "Fruta";
+                                            if(check10.isSelected())
+                                                categorias[9]= "Verbo"; 
+                                        }else{
+                                            if(check10.isSelected())
+                                                categorias[8]= "Verbo";                                         
+                                        }
+                                    }else{
+                                        if(check9.isSelected()){
+                                            categorias[7]= "Fruto";
+                                            if(check10.isSelected())
+                                                categorias[8]= "Verbo";
+                                        }else{
+                                            if(check10.isSelected())
+                                                categorias[7]= "Verbo";
+                                        }
+                                    }
+                                }else{
+                                    if(check8.isSelected()){
+                                        categorias[6]= "Deporte";
+                                        if(check9.isSelected()){
+                                                categorias[7]= "Fruta";
+                                                if(check10.isSelected())
+                                                    categorias[8]= "Verbo";
+                                        }else{
+                                            if(check9.isSelected()){
+                                                categorias[7]= "Fruta";
+                                            }else{
+                                                if(check10.isSelected())
+                                                categorias[7]= "Verbo";
+                                            }
+                                        }
+                                    }else{
+                                       if(check9.isSelected()){
+                                            categorias[6]= "Fruta";
+                                            if(check10.isSelected())
+                                                categorias[7]= "Verbo";
+                                            }else {
+                                            if(check10.isSelected())
+                                                categorias[6]= "Verbo";
+                                            }   
+                                    }
+                                }
+                            }else{
+                                if(check7.isSelected()){
+                                    categorias[5]= "Ciudad";
+                                    if(check8.isSelected()){
+                                        categorias[6]= "Deporte";
+                                        if(check9.isSelected()){
+                                            categorias[7]= "Fruta";
+                                            if(check10.isSelected())
+                                                categorias[8]= "Verbo";
+                                        }else{
+                                            if(check10.isSelected())
+                                            categorias[7]= "Verbo";
+                                        }    
+                                    }else{
+                                        if(check9.isSelected()){
+                                            categorias[6]= "Fruta"; 
+                                            if(check10.isSelected())
+                                                categorias[7]= "Verbo";
+                                        }else{
+                                            if(check10.isSelected())
+                                                categorias[6]= "Verbo";
+                                        }
+                                    }
+                                }else{
+                                    if(check8.isSelected()){
+                                        categorias[5]= "Deporte";
+                                        if(check9.isSelected()){
+                                            categorias[6]= "Fruta";
+                                            if(check10.isSelected())
+                                                categorias[7]= "Verbo";
+                                        }else{
+                                            if(check10.isSelected())
+                                                categorias[6]= "Verbo";
+                                        }
+                                        
+                                    }else{
+                                        if(check9.isSelected()){
+                                                categorias[5]= "Fruta";
+                                                if(check10.isSelected())
+                                                    categorias[6]= "Verbo";
+                                        }else{
+                                            if(check10.isSelected())
+                                                categorias[5]= "Verbo";
+                                        }        
+                                    }
+                                }
+                            }
+                        }else{
+                            if(check6.isSelected()){
+                                categorias[4]= "Animal";
+                                if(check7.isSelected()){
+                                    categorias[5]= "Ciudad";
+                                }else{
+                                    if(check8.isSelected()){
+                                        categorias[5]= "Deporte";
+                                        if(check9.isSelected()){
+                                            categorias[6]= "Fruta";
+                                                if(check10.isSelected()){
+                                                    categorias[7]= "Verbo";
+                                        }else{
+                                            if(check10.isSelected()){
+                                                categorias[6]= "Verbo";
+                                            }
+                                        }
+                                        }else{
+                                            if(check9.isSelected()){
+                                                categorias[5]= "Fruta";
+                                                if(check10.isSelected())
+                                                    categorias[6]= "Verbo";
+                                            }else{
+                                                if(check10.isSelected())
+                                                    categorias[5]= "Verbo";
+                                            }
+                                        }
+                                    }
+                                }
+                            }else{
+                                if(check7.isSelected()){
+                                    categorias[4]= "Ciudad";
+                                    if(check8.isSelected()){
+                                        categorias[5]= "Deporte";
+                                        if(check9.isSelected()){
+                                            categorias[6]= "Fruta";
+                                            if(check10.isSelected())
+                                                categorias[7]= "Verbo";
+                                        }else{
+                                            if(check10.isSelected())
+                                                categorias[6]= "Ciudad";    
+                                        }
+                                    }else{
+                                        if(check9.isSelected()){
+                                            categorias[5]= "Fruta";
+                                            if(check10.isSelected())
+                                                categorias[6]= "Verbo";
+                                        }else{
+                                            if(check10.isSelected())
+                                                categorias[5]= "Verbo";
+                                        }
+                                    }
+                                }else{
+                                    if(check8.isSelected()){
+                                        categorias[4]= "Deporte";
+                                        if(check9.isSelected()){
+                                            categorias[5]= "Fruta";
+                                            if(check10.isSelected()){
+                                                categorias[4]= "Verbo";
+                                        }else{
+                                            if(check10.isSelected())
+                                                categorias[5]= "Verbo";
+                                        }
+                                    }else{
+                                        if(check9.isSelected()){
+                                            categorias[4]= "Fruta";
+                                        }else{
+                                            if(check10.isSelected()){
+                                                categorias[4]= "Verbo";
+                                        }
+                            }
+                        }    
+                    }else{
+                        if(check4.isSelected()){
+                        categorias[2]= "Apellido";
+                        }
+                    }
+                }else{
+                    if(check3.isSelected()){
+                    categorias[1]= "Cosa";
+                    }
+                }
+            }else {
+                if(check3.isSelected()){
+                categorias[1]= "Cosa";
+                }
+            }
+        }else{
+            if(check2.isSelected()){
+                categorias[0]= "Apellido";
+            }
+        }
         
         JComboBox rondas= new JComboBox(new String[]{"Seleccione el numero de rondas","1","2","3","4","5","6","7",
             "8","9","10","11","12","13","14","15","16","17","18","19","20","21",
