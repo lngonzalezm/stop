@@ -12,8 +12,11 @@ import javax.swing.JLabel;
  * @author Sergio y Camilo
  */
 public class Cronometro extends Thread {
-    JLabel eti;
-    
+     JLabel eti;
+     public static String textSeg="";
+     public static String textMin="";
+     public static String textHora="";
+     public static String reloj;
     public Cronometro(JLabel cronometro)
     {
         this.eti = cronometro;
@@ -23,11 +26,11 @@ public class Cronometro extends Thread {
     public void run()
     {
         try{
-        int x=0;    
+         
         
         while(VentanaCronometro.IniciaHilo){
             Thread.sleep(1000);
-            ejecutarHiloCronometro(x);
+            ejecutarHiloCronometro();
         }
             
         }catch (Exception e)
@@ -36,9 +39,8 @@ public class Cronometro extends Thread {
         }
     }
     
-    private void ejecutarHiloCronometro(int x)
+    private void ejecutarHiloCronometro()
     {
-        System.out.println(x+" - "+Thread.currentThread().getName());
         VentanaCronometro.segundo++;
         
         if(VentanaCronometro.segundo>59){
@@ -51,9 +53,7 @@ public class Cronometro extends Thread {
                 }
         }
         
-     String textSeg="";
-     String textMin="";
-     String textHora="";
+     
      
      //textSeg+=VentanaCronometro.segundo;
      //textMin+=VentanaCronometro.minuto;
@@ -68,19 +68,19 @@ public class Cronometro extends Thread {
      
      if(VentanaCronometro.minuto<10)
      {
-        textSeg="0"+VentanaCronometro.minuto; 
+        textMin="0"+VentanaCronometro.minuto; 
      }else{
-        textSeg="" +VentanaCronometro.minuto;
+        textMin="" +VentanaCronometro.minuto;
      }
      
      if(VentanaCronometro.hora<10)
      {
-        textSeg="0"+VentanaCronometro.hora; 
+        textHora="0"+VentanaCronometro.hora; 
      }else{
-        textSeg="" +VentanaCronometro.hora;
+        textHora="" +VentanaCronometro.hora;
      }
      
-     String reloj=textHora+":"+textMin+":"+textSeg;
+     reloj=textHora+":"+textMin+":"+textSeg;
      //......................
      
      eti.setText(reloj);
